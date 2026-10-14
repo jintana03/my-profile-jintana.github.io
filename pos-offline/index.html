@@ -10,6 +10,22 @@
 	<title>POS Offline</title>
 </head>
 <body>
+<div class="auth-gate" id="authGate">
+	<div class="auth-card">
+		<div class="auth-brand"><div class="brand-mark">P</div><div><strong>POS Offline</strong><small>ระบบคิดเงินหน้าร้าน</small></div></div>
+		<p class="eyebrow" id="authEyebrow">เข้าสู่ระบบ</p>
+		<h1 id="authTitle">เข้าสู่ระบบ POS</h1>
+		<p class="auth-description" id="authDescription">กรุณาเข้าสู่ระบบเพื่อใช้งานระบบขายสินค้า</p>
+		<form id="authForm" autocomplete="on">
+			<label>ชื่อผู้ใช้<input id="authUsername" name="username" autocomplete="username" required placeholder="เช่น admin" /></label>
+			<label>รหัสผ่าน<input id="authPassword" name="password" type="password" autocomplete="current-password" required placeholder="กรอกรหัสผ่าน" /></label>
+			<label class="auth-confirm-field" id="authConfirmField">ยืนยันรหัสผ่าน<input id="authConfirmPassword" name="confirmPassword" type="password" autocomplete="new-password" placeholder="กรอกรหัสผ่านอีกครั้ง" /></label>
+			<p class="auth-message" id="authMessage" role="alert"></p>
+			<button class="primary-button auth-submit" type="submit" id="authSubmit">เข้าสู่ระบบ</button>
+		</form>
+		<p class="auth-note">ข้อมูลการเข้าสู่ระบบเก็บไว้ในเครื่อง/เบราว์เซอร์นี้</p>
+	</div>
+</div>
 <div class="app-shell">
 	<aside class="sidebar">
 		<div class="brand">
@@ -27,7 +43,7 @@
 			<div class="brand-mark">P</div>
 			<strong>POS Offline</strong></div>
 		<div class="topbar-store"><span class="store-dot"></span><span id="storeNameTop">ร้านค้าของฉัน</span></div>
-		<div class="topbar-actions"><span class="date-label" id="todayLabel"></span><button class="icon-button" id="resetDemoBtn" title="เริ่มข้อมูลตัวอย่างใหม่">↺</button></div>
+		<div class="topbar-actions"><span class="date-label" id="todayLabel"></span><button class="icon-button" id="resetDemoBtn" title="เริ่มข้อมูลตัวอย่างใหม่">↺</button><button class="icon-button logout-button" id="logoutBtn" title="ออกจากระบบ">⇥</button></div>
 		</header>
 		<section id="salesView" class="view active-view">
 			<div class="page-heading">
@@ -206,6 +222,7 @@
 </div>
 <script src="imported-data.js"></script>
 <script src="category-sync.js"></script>
+<script src="auth-support.js"></script>
   <script src="app.js"></script>
   <script src="discount-support.js"></script>
   <script src="product-search-support.js"></script>
